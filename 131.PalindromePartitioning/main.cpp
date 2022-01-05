@@ -13,23 +13,27 @@ class Solution {
     return false;
   return true;
   }
-  void helper(vector<vector<string>>& res,vector<string>& curr, int i, string &s) {
+  void helper(vector<vector<string>>& res,
+        vector<string>& curr,
+        int i,
+        string &s) {
   if (i >= s.size()) {
     res.push_back(curr);
     return;
   }
   for (int start = i; start < s.size(); ++start)
     if (isPalindrome(s, i, start)) {
-    curr.push_back(s.substr(i,start-i+1));
-    helper(res, curr, start + 1,s);
+    curr.push_back(s.substr(i, start - i + 1));
+    helper(res, curr, start + 1, s);
     curr.pop_back();
     }
   }
+
  public:
   vector<vector<string>> partition(string s) {
   vector<vector<string>> res;
   vector<string> curr;
-  helper(res,curr,0,s);
+  helper(res, curr, 0, s);
   return res;
   }
 };
