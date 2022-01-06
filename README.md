@@ -7,3 +7,5 @@
 - 518 Coin Change 2: [problem](https://leetcode.com/problems/coin-change-2/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/518.CoinChange2)
 - 1009 Complement Of Base 10 Integer: [problem](https://leetcode.com/problems/complement-of-base-10-integer/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/1009.ComplementOfBase10Integer)
 - 131 Palindrome Partitioning: [problem](https://leetcode.com/problems/palindrome-partitioning/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/131.PalindromePartitioning)
+- 1094 Car Pooling: [problem](https://leetcode.com/problems/car-pooling/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/1094.CarPooling)
+- 91 Decode Ways: [problem](https://leetcode.com/problems/decode-ways/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/91.DecodeWays)
