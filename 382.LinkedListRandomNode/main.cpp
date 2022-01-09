@@ -19,20 +19,20 @@ class Solution {
   ListNode* llist;
  public:
   explicit Solution(ListNode* head) {
-  llist = head;
-  ListNode* ptr = head;
-  while (ptr) {
-    len++;
-    ptr = ptr->next;
-  }
+    llist = head;
+    ListNode* ptr = head;
+    while (ptr) {
+      len++;
+      ptr = ptr->next;
+    }
   }
 
   int getRandom() {
-  int our_index = rand() % len;
-  ListNode* ptr = llist;
-  for (int i = 0; i < our_index; ++i)
-    ptr = ptr->next;
-  return ptr->val;
+    int our_index = rand() % len;
+    ListNode* ptr = llist;
+    for (int i = 0; i < our_index; ++i)
+      ptr = ptr->next;
+    return ptr->val;
   }
 };
 
