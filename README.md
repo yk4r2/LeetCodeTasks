@@ -9,3 +9,6 @@
 - 131 Palindrome Partitioning: [problem](https://leetcode.com/problems/palindrome-partitioning/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/131.PalindromePartitioning)
 - 1094 Car Pooling: [problem](https://leetcode.com/problems/car-pooling/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/1094.CarPooling)
 - 91 Decode Ways: [problem](https://leetcode.com/problems/decode-ways/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/91.DecodeWays)
+- 382 Linked List Random Node: [problem](https://leetcode.com/problems/linked-list-random-node/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/382.LinkedListRandomNode)
+- 1463 Cherry Pickup 2: [problem](https://leetcode.com/problems/cherry-pickup-ii/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/1463.CherryPickup2)
+- 1041 Robot Bounded in Circle: [problem](https://leetcode.com/problems/robot-bounded-in-circle/) [solution](https://github.com/yk4r2/LeetCodeTasks/tree/master/1041.RobotBoundedInCircle) [my explaination](https://leetcode.com/problems/robot-bounded-in-circle/discuss/1679049/C%2B%2B-O(n)-solution-100-time-thinking-process-explained)
