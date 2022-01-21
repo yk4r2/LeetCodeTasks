@@ -76,8 +76,9 @@ class LRUCache {
   unordered_map<int, DoublyLinkedNode*> hashmap;
   DoublyLinkedList* dll;
   int max_capacity;
+
  public:
-  LRUCache(int capacity) {
+  explicit LRUCache(int capacity) {
     max_capacity = capacity;
     dll = new DoublyLinkedList();
   }
