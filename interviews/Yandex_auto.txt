@@ -1,0 +1,154 @@
+SQL
+
+Есть база объявлений состоящая из: номер объявления, владелец, дата публикации и дата снятия объявления, марка
+
+offerId |user |create_date |finish_date|Mark
+1a |u1 |2020-01-01 |2020-01-02 |M1
+2b |u1 |2020-01-03 |2020-01-04 |M2
+3x |u1 |2020-01-05 |2020-01-07 |M1
+4y |u1 |2020-03-01 |2020-03-10 |M3
+5z |u2 |2020-04-01 |2020-04-05 |M1
+6f |u2 |2020-04-06 |2020-04-07 |M2
+7f |u2 |2020-04-10 |2020-04-11 |M2
+8f |u2 |2020-07-01 |2020-07-09 |M2
+9 |u3 |2020-08-01 |2020-08-10 |M2
+10 |u3 |2020-08-03 |2020-08-10 |M3
+11 |u3 |2020-08-03 |2020-08-10 |M4
+12 |u4 |2020-03-04 |2020-03-08 |M1
+
+t
+
+1. Для каждого пользователя вывести 
+- кол-во объявлений,
+- кол-во уникальных марок,
+- дату публикации первого опубликованного объявления,
+- дату снятия последнего объявления
+
+
+select user,
+       count(*) as offer_count,
+       count(distinct Mark) as unique_marks,
+       min(create_date) as first_publish_date
+from t
+group by user
+
+select user, max(finish_date)
+from (select user, max(create_date) as create_date
+      from t
+      group by user
+      ) t1 join t
+          on t.user = t1.user and t.create_date = t1.create_date
+group by user
+
+2. Найти пользователей, которые размещают только такие же марки как и пользователь u2
+
+select user,
+       count(distinct Mark) over (partition by user) as marks_count,
+       case(marks_count = t1.marks_count)
+from (select distinct Mark, count(distinct Mark) as marks_count
+      from t
+      where user = 'u2') t1 join t
+      on t1.Mark = t.Mark
+
+t0 v
+1 0
+2 0
+3 0
+
+t1 v
+3 1
+4 1
+5 1
+
+t0 lj t1 on t0 = t1 -> 1, 2, 3
+ret
+id v v_t1
+1 0 null
+2 0 null
+3 0 1
+
+(select user, case(Mark)
+    (select distinct Mark from t where user = 'u2') t2    
+    from t t1 full join t2 on t1.Mark = t2.Mark
+group by user) 
+
+
+Python
+Есть 2 сортированных последовательности целых чисел.
+Хотим напечатать те элементы из первой последовательности, которых нет во второй последовательности.
+
+1,1,1
+1,2,3
+
+def left_merge(left, right):
+    """"""
+    l_element = next(left)
+    r_element = next(right)
+    while left and right:
+        if l_element == r_element:
+            while 
+        elif r_element > l_element:
+            while l_element < r_element:
+                yield left
+                l_element = next(left)
+        else:
+            while r_element < l_element:
+                r_element = next(right)
+        l_element = next(left)
+        r_element = next(right)
+    if not right:
+        while left:
+            yield l_element
+
+    
+    
+
+Решая задачу регрессии, вы обучились на выборке, в которой только положительные целевые переменные.
+Могут ли быть отрицательные предсказания на обучающей выборке? А на тестовой?
+Дайте ответ для различных методов машинного обучения (как минимум, для kNN, линейных моделей, нейросетей, деревьев, RF и GB)
+     Train   Test
+kNN  нет о   нет о
+LR   нет о   есть о
+NN   нет о   есть о
+Tree нет о   нет о
+RF   нет о   нет о
+GB   нет о   не факт
+
+
+Как использовать категориальные факторы с большим количеством значений в машинном обучении?
+Например, регион пользователя, или категорию товара, или ID рекламодателя/магазина?
+
+1. label encoding
+test1
+id 1 -> 1
+id 2 -> 2
+
+test2
+id 1 -> 2
+id 2 -> 1
+
+
+2. dummy encoding 
+
+3. dummy + любой (?) метод снижения размерности
+
+4. target encoding
+
+5. 
+
+
+Решается задача регрессии. Просим рассказать, с помощью каких метрик можно оценить качество модели. 
+В чем особенность каждой из метрик, как выбрать с помощью какой оценивать модель?
+
+1. distance metrics = (1 / n * \sum_{i = 0}^{n-1} (|y_i - y_{i: pred}|)^p)^(1/p)
+2. MAPE = 100% / n * (\sum_{i = 0}^{n-1} (|y_i - y_{i: pred}|)^p)^(1/p)
+3. SMAPE
+4. Rsquared = 1 - (\sum_{i = 0}^{n-1} (y_i - y_{i: pred})^2) / (\sum_{i = 0}^{n-1} (y_i - y_{mean})^2)
+5. Adjusted rsquared --- rsquared with count of experiments
+
+
+
+
+
+
+
