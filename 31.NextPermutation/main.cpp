@@ -7,7 +7,7 @@ using std::vector, std::cout, std::endl, std::string, std::max;
 
 class Solution {
  public:
-  void nextPermutation(vector<int>& nums) {
+  void nextPermutation(vector<int> nums) {
     if (nums.size() == 1)
       return;
     int right = nums.size() - 1;
