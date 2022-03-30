@@ -14,6 +14,7 @@ mapper = {
 INT_MAX = 2**31 - 1
 INT_MIN = -2**31
 
+
 class Solution:
     def stripper(self, x: int) -> int:
         if x > INT_MAX:
