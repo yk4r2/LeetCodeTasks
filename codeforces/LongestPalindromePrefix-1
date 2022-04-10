@@ -1,0 +1,4 @@
+count = input()
+palindromes = [input() for i in range(count)]
+
+pointer = 
